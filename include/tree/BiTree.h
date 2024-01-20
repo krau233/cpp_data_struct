@@ -52,10 +52,13 @@ public:
     void setAmount(int amount);
 
     //递归版本前序遍历
-    void PreOder();
+    void PreOrder();
 
     //迭代版本前序遍历
     void PreOrderByIteration();
+
+    //层次遍历
+    void levelOrder();
 };
 
 

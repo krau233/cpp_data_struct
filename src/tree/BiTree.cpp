@@ -5,6 +5,9 @@
 #include "../../include/tree/BiTree.h"
 #include<iostream>
 #include<stack>
+#include"../../include/queue/queue.h"
+#include "../queue/queue.cpp"
+
 using namespace std;
 
 //****************************************************************************************************** BiNode ************************************************************************************************
@@ -77,11 +80,7 @@ BiTree<T>::BiTree() {
     root = nullptr;
 }
 
-template<typename T>
-void BiTree<T>::PreOder() {
-    BiTNode<T> *p = root;
-    root->preOrder();
-}
+
 
 template<typename T>
 BiTNode<T> *BiTree<T>::getRoot() {
@@ -104,6 +103,12 @@ void BiTree<T>::setAmount(int amount) {
 }
 
 template<typename T>
+void BiTree<T>::PreOrder() {
+    BiTNode<T> *p = root;
+    root->preOrder();
+}
+
+template<typename T>
 void BiTree<T>::PreOrderByIteration() {
     stack<BiTNode<T> *> s;
     auto p = getRoot();
@@ -117,6 +122,19 @@ void BiTree<T>::PreOrderByIteration() {
             p = s.top()->getRchild();
             s.pop();
         }
+    }
+}
+
+template<typename T>
+void BiTree<T>::levelOrder() {
+    CQueue<BiTNode<T> *> queue;
+    queue.EnQueue(root);
+    BiTNode<T> * p ;
+    while(!queue.isEmpty()){
+        queue.DeQueue(p);
+        if(p->getLchild()) queue.EnQueue(p->getLchild());
+        if(p->getRchild()) queue.EnQueue(p->getRchild());
+        cout<<p->getData()<<endl;
     }
 }
 
