@@ -13,9 +13,12 @@ private:
     bool ltag, rtag;
 private:
     void InThread(threadNode<T> *&pre);
+    threadNode<T> * firstNode();
+    threadNode<T> * nextNode();
 public:
     //中序线索化
     void creatInThread();
+    void inOrder();
 
 };
 
