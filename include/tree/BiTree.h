@@ -6,10 +6,10 @@
 #define DATASTRUCT_BITREE_H
 
 template<typename T>
-class BiTNode{
+class BiTNode {
 private:
     T data;
-    BiTNode<T> *lchild,*rchild;
+    BiTNode<T> *lchild, *rchild;
 public:
     BiTNode();
 
@@ -34,10 +34,8 @@ public:
 };
 
 
-
-
 template<typename T>
-class BiTree{
+class BiTree {
 private:
     BiTNode<T> *root;
     int amount;
@@ -45,9 +43,7 @@ private:
 public:
     BiTree();
 
-    void PreOder();
-
-    BiTNode<T> *getRoot() ;
+    BiTNode<T> *getRoot();
 
     void setRoot(BiTNode<T> *root);
 
@@ -55,9 +51,12 @@ public:
 
     void setAmount(int amount);
 
+    //递归版本前序遍历
+    void PreOder();
+
+    //迭代版本前序遍历
     void PreOrderByIteration();
 };
-
 
 
 #endif //DATASTRUCT_BITREE_H
