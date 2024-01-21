@@ -76,7 +76,6 @@ BiTNode<T>::~BiTNode() {
 //****************************************************************************************************** BiTree ************************************************************************************************
 template<typename T>
 BiTree<T>::BiTree() {
-    amount = 0;
     root = nullptr;
 }
 
@@ -92,15 +91,6 @@ void BiTree<T>::setRoot(BiTNode<T> *root) {
     BiTree::root = root;
 }
 
-template<typename T>
-int BiTree<T>::getAmount() const {
-    return amount;
-}
-
-template<typename T>
-void BiTree<T>::setAmount(int amount) {
-    BiTree::amount = amount;
-}
 
 template<typename T>
 void BiTree<T>::PreOrder() {

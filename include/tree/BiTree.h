@@ -5,6 +5,7 @@
 #ifndef DATASTRUCT_BITREE_H
 #define DATASTRUCT_BITREE_H
 
+//二叉树结点
 template<typename T>
 class BiTNode {
 private:
@@ -38,7 +39,6 @@ template<typename T>
 class BiTree {
 private:
     BiTNode<T> *root;
-    int amount;
 
 public:
     BiTree();
@@ -46,10 +46,6 @@ public:
     BiTNode<T> *getRoot();
 
     void setRoot(BiTNode<T> *root);
-
-    int getAmount() const;
-
-    void setAmount(int amount);
 
     //递归版本前序遍历
     void PreOrder();
