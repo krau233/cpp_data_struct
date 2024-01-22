@@ -4,10 +4,9 @@
 
 #ifndef DATASTRUCT_ARRAY_H
 #define DATASTRUCT_ARRAY_H
-#define ElemType int
 #define InitSize 100
 
-class CArrayList{
+template<typename T> class CArrayList{
 public:
     CArrayList();
     virtual ~CArrayList();
@@ -19,20 +18,20 @@ public:
           i：插入位置
           e：插入元素
     ***/
-    bool ListInsert(int i,ElemType e);
+    bool ListInsert(int i,T e);
 
     /***
     功能：删除指定元素，并用e接受删除的元素
     参数：i：待删除元素的位置
           e：接受待删除元素的值
     ***/
-    bool ListDelete(int i,ElemType &e);
+    bool ListDelete(int i,T &e);
 
     /***
     功能：找到指定值的元素的位置，若不存在则返回0
     参数：e：查找的值
     ***/
-    int  LocateElem(ElemType e);
+    int  LocateElem(T e);
 
     /***
     功能：打印列表中的元素
@@ -49,10 +48,10 @@ public :
           i：插入位置
           e：插入元素
     ***/
-    ElemType& operator[](int i);
+    T& operator[](int i);
 public:
     //数组列表
-    ElemType *data;
+    T *data;
     //容量
     int MaxSize;
     //长度

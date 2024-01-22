@@ -6,14 +6,16 @@
 #include "vector"
 
 //构造函数
-CArrayList::CArrayList(){
+template<typename T>
+CArrayList<T>::CArrayList(){
     this->MaxSize = InitSize;
     this->length = 0;
-    this->data = new ElemType[InitSize];
+    this->data = new T[InitSize];
 }
 
 //析构函数
-CArrayList::~CArrayList(){
+template<typename T>
+CArrayList<T>::~CArrayList(){
     delete[] this->data;
 }
 
@@ -24,7 +26,8 @@ CArrayList::~CArrayList(){
 	  i：插入位置
 	  e：插入元素
 ***/
-bool CArrayList::ListInsert(int i,ElemType e){
+template<typename T>
+bool CArrayList<T>::ListInsert(int i,T e){
     //位置无效处理
     if(i<1||i>this->length+1){
         std::cout<<"插入位置无效"<<std::endl;
@@ -51,7 +54,8 @@ bool CArrayList::ListInsert(int i,ElemType e){
 参数：i：待删除元素的位置
 	  e：接受待删除元素的值
 ***/
-bool CArrayList::ListDelete(int i,ElemType &e){
+template<typename T>
+bool CArrayList<T>::ListDelete(int i,T &e){
     //位置无效处理
     if(i<1||i>this->length){
         std::cout<<"删除位置无效"<<std::endl;
@@ -69,7 +73,8 @@ bool CArrayList::ListDelete(int i,ElemType &e){
 功能：找到指定值的元素的位置，若不存在则返回0
 参数：e：查找的值
 ***/
-int CArrayList::LocateElem(ElemType e){
+template<typename T>
+int CArrayList<T>::LocateElem(T e){
     int i;
     for(i=0;i<this->length;i++){
         if(this->data[i]==e){
@@ -81,7 +86,8 @@ int CArrayList::LocateElem(ElemType e){
 
 
 //打印列表中的元素
-void CArrayList::Print(){
+template<typename T>
+void CArrayList<T>::Print(){
     if(this->length == 0){
         std::cout<<"[]"<<std::endl;
         return;
@@ -93,13 +99,15 @@ void CArrayList::Print(){
     std::cout<<this->data[this->length-1]<<"]"<<std::endl;
 }
 
-ElemType& CArrayList::operator[](int i){
+template<typename T>
+T& CArrayList<T>::operator[](int i){
     return this->data[i-1];
 }
 
 
 //获取列表的长度
-int CArrayList::GetLength(){
+template<typename T>
+int CArrayList<T>::GetLength(){
     return this->length;
 }
 
