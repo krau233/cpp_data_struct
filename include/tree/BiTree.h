@@ -34,7 +34,7 @@ public:
 
 };
 
-
+//二叉树
 template<typename T>
 class BiTree {
 private:
