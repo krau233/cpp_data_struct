@@ -10,7 +10,7 @@
 template <typename T>
 class Stack {
 private:
-   CArrayList list;
+   CArrayList<T> list;
 public:
     //获取栈内元素个数
     int getLength();

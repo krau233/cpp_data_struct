@@ -6,6 +6,8 @@
 #define DATASTRUCT_SEARCH_H
 
 #include "../list/array.h"
+#include "../../src/list/array.cpp"
+
 
 //顺序查找
 template<typename T>
@@ -31,4 +33,6 @@ int binary_search(CArrayList<T> array,T key){
     }
     return 0;
 }
+
+
 #endif //DATASTRUCT_SEARCH_H
