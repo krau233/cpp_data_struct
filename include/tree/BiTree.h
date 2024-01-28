@@ -22,11 +22,11 @@ public:
 
     void setData(T data);
 
-    BiTNode<T> *getLchild();
+    BiTNode<T> *&getLchild();
 
     void setLchild(BiTNode<T> *lchild);
 
-    BiTNode<T> *getRchild();
+    BiTNode<T> *&getRchild();
 
     void setRchild(BiTNode<T> *rchild);
 

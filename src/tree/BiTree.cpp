@@ -35,7 +35,7 @@ void BiTNode<T>::setData(T data) {
 }
 
 template<typename T>
-BiTNode<T> *BiTNode<T>::getLchild()  {
+BiTNode<T> *&BiTNode<T>::getLchild()  {
     return lchild;
 }
 
@@ -45,7 +45,7 @@ void BiTNode<T>::setLchild(BiTNode<T> *lchild) {
 }
 
 template<typename T>
-BiTNode<T> *BiTNode<T>::getRchild()  {
+BiTNode<T> *&BiTNode<T>::getRchild()  {
     return rchild;
 }
 

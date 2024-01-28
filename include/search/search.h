@@ -61,9 +61,13 @@ bool BST_Insert(BiTNode<T>* &p,T key){
 
 //构造二叉排序树
 template<typename T>
-void Creat_BST(BiTree<T> t,T arr[],int n){
-    t.setRoot(nullptr);
-    for(int i = 0 ;i<n;++i) BST_Insert(t.getRoot(),arr[i]);
+void Creat_BST(BiTree<T> &t,T arr[],int n){
+    if(t.getRoot()!= nullptr){
+        delete t.getRoot();
+    }
+    BiTNode<T> *root = nullptr;
+    for(int i = 0 ;i<n;++i) BST_Insert(root,arr[i]);
+    t.setRoot(root);
 }
 
 
